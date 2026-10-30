@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --blue:#2438ff; --deep:#0a0d3d; --butter:#ffe45c; --snow:#f5f7ff; --mint:#16d6a1; --line:rgba(255,255,255,.22);
+  --blue:#0f5c43; --deep:#07140f; --butter:#c6f432; --snow:#f4f1e8; --mint:#7ee0a8; --line:rgba(255,255,255,.22);
   --display:"Unbounded",system-ui,sans-serif; --body:"DM Sans",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -22,7 +22,7 @@ a{color:inherit}
 #progress{position:fixed;left:0;top:0;height:4px;width:0;background:var(--butter);z-index:50}
 nav.top{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;mix-blend-mode:normal}
 .logo{font:800 17px var(--display);text-decoration:none;background:var(--butter);color:var(--deep);padding:8px 14px;border-radius:999px}
-.links{display:flex;gap:6px;background:rgba(10,13,61,.55);backdrop-filter:blur(10px);padding:6px;border-radius:999px;border:1px solid var(--line)}
+.links{display:flex;gap:6px;background:rgba(7,20,15,.55);backdrop-filter:blur(10px);padding:6px;border-radius:999px;border:1px solid var(--line)}
 .links a{padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px}
 .links a:hover{background:var(--butter);color:var(--deep)}
 
@@ -37,7 +37,7 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .slot{display:inline-block;position:relative;height:1.15em;overflow:hidden;vertical-align:bottom;background:var(--butter);color:var(--deep);padding:0 .22em;border-radius:.2em;transform:rotate(-1.5deg)}
 .slot span{display:block;height:1.15em;line-height:1.15;animation:slot 9s cubic-bezier(.7,0,.2,1) infinite}
 @keyframes slot{0%,26%{transform:translateY(0)}33%,59%{transform:translateY(-100%)}66%,92%{transform:translateY(-200%)}100%{transform:translateY(-300%)}}
-.lede{margin-top:22px;max-width:46ch;font-size:19px;color:#dfe4ff}
+.lede{margin-top:22px;max-width:46ch;font-size:19px;color:#e3eadf}
 .cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 .btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--snow);transition:transform .2s,background .2s,color .2s}
 .btn.y{background:var(--butter);color:var(--deep);border-color:var(--butter)}
@@ -45,10 +45,10 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .btn.g:hover{background:var(--snow);color:var(--blue)}
 
 /* simulator */
-.sim{background:var(--snow);color:var(--deep);border-radius:24px;padding:18px;box-shadow:0 30px 70px rgba(10,13,61,.45),0 0 0 3px var(--deep);transform:rotate(1.4deg)}
+.sim{background:var(--snow);color:var(--deep);border-radius:24px;padding:18px;box-shadow:0 30px 70px rgba(7,20,15,.45),0 0 0 3px var(--deep);transform:rotate(1.4deg)}
 .sim-h{display:flex;justify-content:space-between;align-items:center;font:700 13px var(--display);margin-bottom:12px;gap:10px;flex-wrap:wrap}
-.sim-h small{font:500 12px var(--body);color:#4a5090}
-.chat{background:#e6eaff;border-radius:14px;padding:12px;min-height:210px;display:flex;flex-direction:column;gap:8px}
+.sim-h small{font:500 12px var(--body);color:#5a6a5e}
+.chat{background:#e6e9dc;border-radius:14px;padding:12px;min-height:210px;display:flex;flex-direction:column;gap:8px}
 .bub{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.4;opacity:0;transform:translateY(10px) scale(.96);transition:all .35s cubic-bezier(.2,.9,.3,1.3)}
 .bub.show{opacity:1;transform:none}
 .bub.in{background:#fff;border-bottom-left-radius:4px;align-self:flex-start}
@@ -64,7 +64,7 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .chip.show{opacity:1;transform:none}
 .chip b{color:var(--butter);font-weight:500;margin-right:4px}
 .meter{margin-top:12px;display:flex;align-items:center;gap:12px}
-.bar{flex:1;height:12px;background:#d3d9ff;border-radius:99px;overflow:hidden}
+.bar{flex:1;height:12px;background:#d5dccb;border-radius:99px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:var(--mint);border-radius:99px;transition:width 1.1s cubic-bezier(.3,.8,.2,1),background .3s}
 .score{font:800 15px var(--display);min-width:128px;text-align:right}
 .out-card{margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--deep);color:var(--snow);font-size:14.5px;min-height:56px;opacity:0;transform:translateY(8px);transition:all .4s}
@@ -74,7 +74,7 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .sim button{font:700 15px var(--body);background:var(--blue);color:#fff;border:0;padding:11px 18px;border-radius:999px;cursor:pointer;transition:transform .2s}
 .sim button:hover{transform:scale(1.05)}
 .sim button:disabled{opacity:.5;cursor:wait;transform:none}
-.sim .tally{font-size:13px;color:#4a5090}
+.sim .tally{font-size:13px;color:#5a6a5e}
 
 /* marquee */
 .band{background:var(--butter);color:var(--deep);padding:18px 0;overflow:hidden;transform:rotate(-1.2deg);margin:-14px -20px 0;position:relative;z-index:3}
@@ -89,10 +89,10 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .stats{padding:110px 0 70px;background:var(--deep)}
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .stat{border:2px solid var(--line);border-radius:22px;padding:26px;transition:transform .3s,border-color .3s,background .3s}
-.stat:hover{transform:translateY(-8px) rotate(-1deg);border-color:var(--butter);background:rgba(255,228,92,.06)}
+.stat:hover{transform:translateY(-8px) rotate(-1deg);border-color:var(--butter);background:rgba(198,244,50,.06)}
 .stat b{display:block;font:800 clamp(38px,5vw,60px)/1 var(--display);color:var(--butter)}
-.stat span{display:block;margin-top:8px;color:#c5cbff}
-.stat small{display:block;margin-top:6px;color:#8f97d8;font-size:13px}
+.stat span{display:block;margin-top:8px;color:#c9d6c8}
+.stat small{display:block;margin-top:6px;color:#8ea597;font-size:13px}
 
 /* panels */
 .panel{padding:90px 0;position:relative}
@@ -109,8 +109,8 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .p4{background:var(--snow);color:var(--deep)} .p4 a.go:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 .p5{background:var(--blue)} .p5 a.go:hover{background:var(--butter);color:var(--deep);border-color:var(--butter)}
 .vis{perspective:900px}
-.tilt{background:var(--snow);color:var(--deep);border-radius:24px;padding:14px;box-shadow:0 26px 60px rgba(10,13,61,.35),0 0 0 3px var(--deep);transition:transform .15s ease-out;transform-style:preserve-3d}
-.p2 .tilt{background:var(--deep);color:var(--snow);box-shadow:0 26px 60px rgba(10,13,61,.25),0 0 0 3px var(--blue)}
+.tilt{background:var(--snow);color:var(--deep);border-radius:24px;padding:14px;box-shadow:0 26px 60px rgba(7,20,15,.35),0 0 0 3px var(--deep);transition:transform .15s ease-out;transform-style:preserve-3d}
+.p2 .tilt{background:var(--deep);color:var(--snow);box-shadow:0 26px 60px rgba(7,20,15,.25),0 0 0 3px var(--blue)}
 .p3 .tilt{background:var(--blue);color:#fff;box-shadow:0 26px 60px rgba(0,0,0,.4),0 0 0 3px var(--butter)}
 .tilt svg{display:block;width:100%;height:auto}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
@@ -120,9 +120,9 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .tools{background:var(--deep);padding:100px 0 50px}
 .tools h2,.path h2{font:800 clamp(30px,4.4vw,56px)/1.05 var(--display);letter-spacing:-.03em;margin-bottom:34px}
 .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tg div{border-radius:22px;padding:26px;background:linear-gradient(160deg,#141a7a,#0d1160);border:2px solid var(--line)}
+.tg div{border-radius:22px;padding:26px;background:linear-gradient(160deg,#0f3a2c,#0a2a20);border:2px solid var(--line)}
 .tg h3{font:700 19px var(--display);margin-bottom:10px;color:var(--butter)}
-.tg p{color:#cfd4ff}
+.tg p{color:#cfdccf}
 /* path */
 .path{background:var(--deep);padding:50px 0 110px}
 .tl{position:relative;padding-left:44px}
@@ -133,7 +133,7 @@ h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bez
 .tl article.in::before{background:var(--butter);transform:scale(1.25)}
 .tl h3{font:700 20px var(--display)}
 .tl .when{color:var(--butter);font-weight:700;font-size:14px}
-.tl p{color:#cfd4ff;max-width:64ch}
+.tl p{color:#cfdccf;max-width:64ch}
 /* contact */
 .contact{background:var(--butter);color:var(--deep);padding:110px 0 70px;text-align:left}
 .contact h2{font:800 clamp(34px,7vw,96px)/1 var(--display);letter-spacing:-.04em}
@@ -230,15 +230,15 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
     </div>
     <div class="vis rv"><div class="tilt">
       <svg viewBox="0 0 480 270" role="img" aria-label="Bars comparing reply rate before and after, 29 percent to 76 percent, simulated">
-        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#0a0d3d">Reply rate (simulated)</text>
-        <rect x="70" y="60" width="110" height="170" rx="10" fill="#d3d9ff"/>
-        <rect x="70" y="230" width="110" height="0" rx="10" fill="#7f8bff"><animate attributeName="height" values="0;49;49;0" keyTimes="0;.2;.9;1" dur="5s" repeatCount="indefinite"/><animate attributeName="y" values="230;181;181;230" keyTimes="0;.2;.9;1" dur="5s" repeatCount="indefinite"/></rect>
-        <rect x="290" y="60" width="110" height="170" rx="10" fill="#d3d9ff"/>
-        <rect x="290" y="230" width="110" height="0" rx="10" fill="#2438ff"><animate attributeName="height" values="0;0;129;129;0" keyTimes="0;.15;.45;.9;1" dur="5s" repeatCount="indefinite"/><animate attributeName="y" values="230;230;101;101;230" keyTimes="0;.15;.45;.9;1" dur="5s" repeatCount="indefinite"/></rect>
-        <text x="125" y="252" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="16" fill="#0a0d3d">29%</text>
-        <text x="345" y="252" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="16" fill="#0a0d3d">76%</text>
-        <text x="125" y="268" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#4a5090">before</text>
-        <text x="345" y="268" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#4a5090">after</text>
+        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#07140f">Reply rate (simulated)</text>
+        <rect x="70" y="60" width="110" height="170" rx="10" fill="#d5dccb"/>
+        <rect x="70" y="230" width="110" height="0" rx="10" fill="#8fb59f"><animate attributeName="height" values="0;49;49;0" keyTimes="0;.2;.9;1" dur="5s" repeatCount="indefinite"/><animate attributeName="y" values="230;181;181;230" keyTimes="0;.2;.9;1" dur="5s" repeatCount="indefinite"/></rect>
+        <rect x="290" y="60" width="110" height="170" rx="10" fill="#d5dccb"/>
+        <rect x="290" y="230" width="110" height="0" rx="10" fill="#0f5c43"><animate attributeName="height" values="0;0;129;129;0" keyTimes="0;.15;.45;.9;1" dur="5s" repeatCount="indefinite"/><animate attributeName="y" values="230;230;101;101;230" keyTimes="0;.15;.45;.9;1" dur="5s" repeatCount="indefinite"/></rect>
+        <text x="125" y="252" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="16" fill="#07140f">29%</text>
+        <text x="345" y="252" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="16" fill="#07140f">76%</text>
+        <text x="125" y="268" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#5a6a5e">before</text>
+        <text x="345" y="268" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#5a6a5e">after</text>
       </svg>
     </div></div>
   </div>
@@ -255,12 +255,12 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
     </div>
     <div class="vis rv"><div class="tilt">
       <svg viewBox="0 0 480 270" role="img" aria-label="Timeline with 24 hour warning and 48 hour critical markers">
-        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#f5f7ff">Lead with no booked demo</text>
-        <line x1="40" y1="130" x2="440" y2="130" stroke="#2f3a9a" stroke-width="6" stroke-linecap="round"/>
-        <line x1="40" y1="130" x2="40" y2="130" stroke="#ffe45c" stroke-width="6" stroke-linecap="round"><animate attributeName="x2" values="40;440;440" keyTimes="0;.75;1" dur="7s" repeatCount="indefinite"/></line>
-        <g opacity=".3"><animate attributeName="opacity" values=".3;.3;1;1" keyTimes="0;.33;.34;1" dur="7s" repeatCount="indefinite"/><circle cx="190" cy="130" r="14" fill="#ffe45c"/><text x="190" y="96" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="14" fill="#ffe45c">Warning, 24h</text></g>
-        <g opacity=".3"><animate attributeName="opacity" values=".3;.3;1;1" keyTimes="0;.6;.61;1" dur="7s" repeatCount="indefinite"/><circle cx="340" cy="130" r="14" fill="#16d6a1"/><text x="340" y="96" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="14" fill="#16d6a1">Critical, 48h</text></g>
-        <g opacity=".25"><animate attributeName="opacity" values=".25;.25;1;1" keyTimes="0;.75;.78;1" dur="7s" repeatCount="indefinite"/><rect x="150" y="180" width="180" height="44" rx="12" fill="#ffe45c"/><text x="240" y="208" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="15" fill="#0a0d3d">Daily Slack digest</text></g>
+        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#f4f1e8">Lead with no booked demo</text>
+        <line x1="40" y1="130" x2="440" y2="130" stroke="#2a6b55" stroke-width="6" stroke-linecap="round"/>
+        <line x1="40" y1="130" x2="40" y2="130" stroke="#c6f432" stroke-width="6" stroke-linecap="round"><animate attributeName="x2" values="40;440;440" keyTimes="0;.75;1" dur="7s" repeatCount="indefinite"/></line>
+        <g opacity=".3"><animate attributeName="opacity" values=".3;.3;1;1" keyTimes="0;.33;.34;1" dur="7s" repeatCount="indefinite"/><circle cx="190" cy="130" r="14" fill="#c6f432"/><text x="190" y="96" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="14" fill="#c6f432">Warning, 24h</text></g>
+        <g opacity=".3"><animate attributeName="opacity" values=".3;.3;1;1" keyTimes="0;.6;.61;1" dur="7s" repeatCount="indefinite"/><circle cx="340" cy="130" r="14" fill="#7ee0a8"/><text x="340" y="96" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="14" fill="#7ee0a8">Critical, 48h</text></g>
+        <g opacity=".25"><animate attributeName="opacity" values=".25;.25;1;1" keyTimes="0;.75;.78;1" dur="7s" repeatCount="indefinite"/><rect x="150" y="180" width="180" height="44" rx="12" fill="#c6f432"/><text x="240" y="208" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="15" fill="#07140f">Daily Slack digest</text></g>
       </svg>
     </div></div>
   </div>
@@ -295,16 +295,16 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
     </div>
     <div class="vis rv"><div class="tilt">
       <svg viewBox="0 0 480 270" role="img" aria-label="An invoice moving from sent to overdue to escalated">
-        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#0a0d3d">Invoice status</text>
-        <rect x="20" y="100" width="120" height="80" rx="14" fill="#e6eaff" stroke="#0a0d3d" stroke-width="3"/>
-        <rect x="180" y="100" width="120" height="80" rx="14" fill="#ffe45c" stroke="#0a0d3d" stroke-width="3"/>
-        <rect x="340" y="100" width="120" height="80" rx="14" fill="#2438ff" stroke="#0a0d3d" stroke-width="3"/>
-        <g stroke="#0a0d3d" stroke-width="3" fill="none" stroke-dasharray="8 8"><path d="M140 140H180M300 140H340"><animate attributeName="stroke-dashoffset" to="-16" dur=".8s" repeatCount="indefinite"/></path></g>
-        <text x="80" y="147" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="14" fill="#0a0d3d">Sent</text>
-        <text x="240" y="147" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="14" fill="#0a0d3d">Overdue</text>
+        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#07140f">Invoice status</text>
+        <rect x="20" y="100" width="120" height="80" rx="14" fill="#e6e9dc" stroke="#07140f" stroke-width="3"/>
+        <rect x="180" y="100" width="120" height="80" rx="14" fill="#c6f432" stroke="#07140f" stroke-width="3"/>
+        <rect x="340" y="100" width="120" height="80" rx="14" fill="#0f5c43" stroke="#07140f" stroke-width="3"/>
+        <g stroke="#07140f" stroke-width="3" fill="none" stroke-dasharray="8 8"><path d="M140 140H180M300 140H340"><animate attributeName="stroke-dashoffset" to="-16" dur=".8s" repeatCount="indefinite"/></path></g>
+        <text x="80" y="147" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="14" fill="#07140f">Sent</text>
+        <text x="240" y="147" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="14" fill="#07140f">Overdue</text>
         <text x="400" y="147" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="14" fill="#fff">Escalate</text>
-        <circle r="10" fill="#0a0d3d"><animateMotion dur="3.4s" repeatCount="indefinite" path="M80 215 L240 215 L400 215"/></circle>
-        <line x1="40" y1="215" x2="440" y2="215" stroke="#0a0d3d" stroke-width="2" stroke-dasharray="3 7"/>
+        <circle r="10" fill="#07140f"><animateMotion dur="3.4s" repeatCount="indefinite" path="M80 215 L240 215 L400 215"/></circle>
+        <line x1="40" y1="215" x2="440" y2="215" stroke="#07140f" stroke-width="2" stroke-dasharray="3 7"/>
       </svg>
     </div></div>
   </div>
@@ -320,9 +320,9 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
     </div>
     <div class="vis rv"><div class="tilt">
       <svg viewBox="0 0 480 270" role="img" aria-label="Applicant bars sorting into ranked order">
-        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#0a0d3d">Applicants ranked</text>
+        <text x="20" y="30" font-family="DM Sans" font-weight="700" font-size="15" fill="#07140f">Applicants ranked</text>
         <g id="rank"></g>
-        <line x1="30" y1="240" x2="450" y2="240" stroke="#0a0d3d" stroke-width="3"/>
+        <line x1="30" y1="240" x2="450" y2="240" stroke="#07140f" stroke-width="3"/>
       </svg>
     </div></div>
   </div>
@@ -404,12 +404,12 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
   var wave=document.getElementById("wave");
   for(var i=0;i<40;i++){
     var a=22+Math.abs(Math.sin(i*.55))*95+((i*7)%13),b=8+((i*13)%23),d=(.6+((i*5)%9)/10).toFixed(2),x=24+i*11;
-    var r=el("rect",{x:x,y:150-a/2,width:6,height:a,rx:3,fill:i%6==0?"#ffe45c":"#fff"},wave);
+    var r=el("rect",{x:x,y:150-a/2,width:6,height:a,rx:3,fill:i%6==0?"#c6f432":"#fff"},wave);
     el("animate",{attributeName:"height",values:a+";"+b+";"+a,dur:d+"s",repeatCount:"indefinite"},r);
     el("animate",{attributeName:"y",values:(150-a/2)+";"+(150-b/2)+";"+(150-a/2),dur:d+"s",repeatCount:"indefinite"},r);
   }
   var rank=document.getElementById("rank");
-  var order=[[70,"#0a0d3d"],[120,"#2438ff"],[40,"#9aa4ff"],[160,"#0a0d3d"],[90,"#2438ff"],[55,"#9aa4ff"]];
+  var order=[[70,"#07140f"],[120,"#0f5c43"],[40,"#9fb8a8"],[160,"#07140f"],[90,"#0f5c43"],[55,"#9fb8a8"]];
   var sorted=[160,120,90,70,55,40];
   order.forEach(function(o,i){
     var from=o[0],to=sorted[i],x=40+i*68;
@@ -429,7 +429,7 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
     for(var y=gap/2;y<H;y+=gap){for(var x=gap/2;x<W;x+=gap){
       var wv=Math.sin((x+y)*.012+t*.0014)*.5+.5;var dx=x-mx,dy=y-my,dd=Math.sqrt(dx*dx+dy*dy),near=Math.max(0,1-dd/170);
       var rad=1.3+wv*1.5+near*5;
-      cx.fillStyle=near>.05?"rgba(255,228,92,"+(.35+near*.65)+")":"rgba(255,255,255,"+(.12+wv*.2)+")";
+      cx.fillStyle=near>.05?"rgba(198,244,50,"+(.35+near*.65)+")":"rgba(255,255,255,"+(.12+wv*.2)+")";
       cx.beginPath();cx.arc(x-(dx/(dd+1))*near*10,y-(dy/(dd+1))*near*10,rad,0,6.283);cx.fill();
     }}
     if(!reduce)requestAnimationFrame(draw);
@@ -438,8 +438,8 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
 
   /* lead simulator */
   var LEADS=[
-    {msg:"Hi, need a full renovation for our 3BHK in Whitefield. Want to start next month, budget around 18 lakh.",f:[["Service","Full renovation"],["Area","Whitefield"],["Start","Next month"],["Budget","Rs 18L"]],s:92,l:"Hot lead",c:"#16d6a1",o:"<b>Site visit booked</b> for Saturday 11:00. Owner alerted within 15 minutes."},
-    {msg:"Interested in painting a 2BHK. Just exploring for now, maybe in 3 months.",f:[["Service","Painting"],["Area","Not shared"],["Start","In 3 months"],["Budget","Not shared"]],s:55,l:"Warm lead",c:"#ffb800",o:"<b>Follow-ups scheduled</b> at 1 hour, 1 day, 3 days and 7 days."},
+    {msg:"Hi, need a full renovation for our 3BHK in Whitefield. Want to start next month, budget around 18 lakh.",f:[["Service","Full renovation"],["Area","Whitefield"],["Start","Next month"],["Budget","Rs 18L"]],s:92,l:"Hot lead",c:"#7ee0a8",o:"<b>Site visit booked</b> for Saturday 11:00. Owner alerted within 15 minutes."},
+    {msg:"Interested in painting a 2BHK. Just exploring for now, maybe in 3 months.",f:[["Service","Painting"],["Area","Not shared"],["Start","In 3 months"],["Budget","Not shared"]],s:55,l:"Warm lead",c:"#ffb347",o:"<b>Follow-ups scheduled</b> at 1 hour, 1 day, 3 days and 7 days."},
     {msg:"what is the price",f:[["Service","Unknown"],["Area","Unknown"],["Start","Unknown"],["Budget","Unknown"]],s:18,l:"Cold lead",c:"#ff6b5a",o:"<b>Questions queued.</b> Added to the nurture list until the lead shares more."}
   ];
   var idx=0,handled=0,go=document.getElementById("go"),chat=document.getElementById("chat"),bin=document.getElementById("b-in"),bout=document.getElementById("b-out"),bint=document.getElementById("b-in-t"),typing=document.getElementById("typing"),chips=document.getElementById("chips"),fill=document.getElementById("fill"),score=document.getElementById("score"),oc=document.getElementById("outcard"),tally=document.getElementById("tally");
