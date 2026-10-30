@@ -27,22 +27,41 @@ nav.top{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-cont
 .links a:hover{background:var(--butter);color:var(--deep)}
 
 /* hero */
-.hero{position:relative;min-height:100vh;background:var(--blue);overflow:hidden;padding:130px 0 70px;display:flex;align-items:center}
+.hero{position:relative;min-height:100vh;background:var(--blue);overflow:hidden;padding:120px 0 90px;display:flex;align-items:center}
+.hero::after{content:"";position:absolute;right:-160px;top:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(198,244,50,.22),rgba(198,244,50,0) 65%);pointer-events:none}
 #dots{position:absolute;inset:0;width:100%;height:100%}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center}
-h1{font:800 clamp(34px,5.2vw,68px)/1.05 var(--display);letter-spacing:-.03em}
-h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero .wrap{position:relative;max-width:1260px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(7,20,15,.45);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:24px}
+.eyebrow i{width:9px;height:9px;border-radius:50%;background:var(--butter);animation:ping 1.8s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(198,244,50,.7)}100%{box-shadow:0 0 0 12px rgba(198,244,50,0)}}
+h1{font:800 clamp(36px,4.9vw,66px)/1.04 var(--display);letter-spacing:-.03em}
+h1 .ln{display:block;overflow:hidden;padding:.04em 0 .1em}
 h1 .w{display:inline-block;transform:translateY(115%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes up{to{transform:none}}
-.slot{display:inline-block;position:relative;height:1.15em;overflow:hidden;vertical-align:bottom;background:var(--butter);color:var(--deep);padding:0 .22em;border-radius:.2em;transform:rotate(-1.5deg)}
-.slot span{display:block;height:1.15em;line-height:1.15;animation:slot 9s cubic-bezier(.7,0,.2,1) infinite}
-@keyframes slot{0%,26%{transform:translateY(0)}33%,59%{transform:translateY(-100%)}66%,92%{transform:translateY(-200%)}100%{transform:translateY(-300%)}}
-.lede{margin-top:22px;max-width:46ch;font-size:19px;color:#e3eadf}
+.hl{display:inline-block;background:var(--butter);color:var(--deep);padding:0 .2em;border-radius:.2em;transform:rotate(-1.5deg)}
+.lede{margin-top:20px;max-width:50ch;font-size:19px;color:#e3eadf}
+.lede b{color:var(--butter);font-weight:700}
 .cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 .btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--snow);transition:transform .2s,background .2s,color .2s}
 .btn.y{background:var(--butter);color:var(--deep);border-color:var(--butter)}
 .btn:hover{transform:translateY(-3px) rotate(-1deg)}
 .btn.g:hover{background:var(--snow);color:var(--blue)}
+.proof{display:flex;gap:26px;margin-top:38px;list-style:none;flex-wrap:wrap}
+.proof li{border-left:3px solid var(--butter);padding-left:14px;max-width:176px}
+.proof b{display:block;font:800 28px/1.1 var(--display);color:var(--butter)}
+.proof span{display:block;margin-top:4px;font-size:13px;line-height:1.35;color:#d3dfd2}
+.simwrap{position:relative;padding:22px 18px}
+.fl{position:absolute;z-index:2;background:var(--butter);color:var(--deep);font:700 13px var(--display);padding:9px 14px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.3);animation:fl 5s ease-in-out infinite}
+.fl.f1{top:0;left:-10px}
+.fl.f2{top:36%;right:-14px;background:var(--snow);animation-delay:-1.6s}
+.fl.f3{bottom:0;left:14%;background:var(--deep);color:var(--butter);animation-delay:-3.2s}
+@keyframes fl{50%{transform:translateY(-10px) rotate(2deg)}}
+.live{display:inline-flex;align-items:center;gap:7px}
+.live i{width:8px;height:8px;border-radius:50%;background:#ff4d4d;animation:ping2 1.4s infinite}
+@keyframes ping2{0%{box-shadow:0 0 0 0 rgba(255,77,77,.6)}100%{box-shadow:0 0 0 9px rgba(255,77,77,0)}}
+.cue{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);z-index:2;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.8;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+@media (max-width:860px){.hero{padding:104px 0 90px}.fl.f1{left:-4px}.fl.f2{right:-4px}.cue{display:none}.proof{gap:18px}}
 
 /* simulator */
 .sim{background:var(--snow);color:var(--deep);border-radius:24px;padding:18px;box-shadow:0 30px 70px rgba(7,20,15,.45),0 0 0 3px var(--deep);transform:rotate(1.4deg)}
@@ -173,32 +192,42 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
   <canvas id="dots" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <h1 aria-label="I build automations that answer leads, flag delays and chase invoices.">
-        <span class="ln"><span class="w" style="animation-delay:.05s">I</span> <span class="w" style="animation-delay:.12s">build</span></span>
-        <span class="ln"><span class="w" style="animation-delay:.2s">automations</span></span>
-        <span class="ln"><span class="w" style="animation-delay:.28s">that</span> <span class="w" style="animation-delay:.36s"><span class="slot" aria-hidden="true"><span>answer leads</span><span>flag delays</span><span>chase invoices</span><span>answer leads</span></span></span></span>
+      <span class="eyebrow"><i></i>Open to AI ops and Founder's Office roles · Bengaluru</span>
+      <h1 aria-label="Operations that run themselves.">
+        <span class="ln"><span class="w" style="animation-delay:.05s">Operations</span></span>
+        <span class="ln"><span class="w" style="animation-delay:.15s">that</span> <span class="w" style="animation-delay:.25s"><span class="hl">run</span></span></span>
+        <span class="ln"><span class="w" style="animation-delay:.35s"><span class="hl">themselves.</span></span></span>
       </h1>
-      <p class="lede">Finance graduate from PES University. I build working systems with Make.com, Claude, GPT-4o and Python for sales, operations and finance teams, and I measure the result.</p>
+      <p class="lede">I'm Kabir Anand, a finance graduate who builds working automations with <b>Make.com, Claude and Python</b> for sales, ops and finance teams, then measures what they change.</p>
       <div class="cta">
         <a class="btn y" href="#work">See the projects</a>
+        <a class="btn g" href="mailto:kabiranand192005@gmail.com">Email me</a>
         <a class="btn g" href="https://github.com/kabir1921">GitHub</a>
-        <a class="btn g" href="https://www.linkedin.com/in/kabir-anand-391546271">LinkedIn</a>
       </div>
+      <ul class="proof">
+        <li><b>25+</b><span>qualified leads a day from an AI outreach build</span></li>
+        <li><b>9</b><span>module SLA alert scenario, zero errors</span></li>
+        <li><b>15+</b><span>research papers, PES University</span></li>
+      </ul>
     </div>
 
-    <div class="sim" aria-label="Interactive demo of the Speed-to-Lead automation with a simulated lead">
-      <div class="sim-h"><span>Speed-to-Lead demo</span><small>Simulated lead, nothing is sent</small></div>
-      <div class="chat" id="chat" aria-live="polite">
-        <div class="bub in" id="b-in"><span id="b-in-t"></span><span class="t">New WhatsApp lead</span></div>
-        <div class="typing" id="typing" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div class="bub out" id="b-out">Hi! Happy to help. Which area is the property in, and when would you like to start?<span class="t" id="b-out-t">Replied in 3 s</span></div>
+    <div class="simwrap">
+      <span class="fl f1">Make.com</span><span class="fl f2">Claude API</span><span class="fl f3">WhatsApp</span>
+      <div class="sim" aria-label="Interactive demo of the Speed-to-Lead automation with a simulated lead">
+        <div class="sim-h"><span class="live"><i></i>Speed-to-Lead, running</span><small>Simulated lead, nothing is sent</small></div>
+        <div class="chat" id="chat" aria-live="polite">
+          <div class="bub in" id="b-in"><span id="b-in-t"></span><span class="t">New WhatsApp lead</span></div>
+          <div class="typing" id="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="bub out" id="b-out">Hi! Happy to help. Which area is the property in, and when would you like to start?<span class="t" id="b-out-t">Replied in 3 s</span></div>
+        </div>
+        <div class="chips" id="chips" aria-live="polite"></div>
+        <div class="meter"><div class="bar"><i id="fill"></i></div><div class="score" id="score">Score</div></div>
+        <div class="out-card" id="outcard"></div>
+        <div class="sim-f"><button id="go" type="button">Send a test lead</button><span class="tally" id="tally">0 leads handled</span></div>
       </div>
-      <div class="chips" id="chips" aria-live="polite"></div>
-      <div class="meter"><div class="bar"><i id="fill"></i></div><div class="score" id="score">Score</div></div>
-      <div class="out-card" id="outcard"></div>
-      <div class="sim-f"><button id="go" type="button">Send a test lead</button><span class="tally" id="tally">0 leads handled</span></div>
     </div>
   </div>
+  <a class="cue" href="#work">Scroll</a>
 </section>
 
 <div class="band" aria-hidden="true">
@@ -446,15 +475,15 @@ footer{background:var(--butter);color:var(--deep);padding:0 0 40px;font-size:14p
   function reset(){[bin,bout].forEach(function(b){b.classList.remove("show");});typing.classList.remove("show");chips.innerHTML="";fill.style.width="0";score.textContent="Score";oc.classList.remove("show");oc.innerHTML="";}
   var timers=[];function at(ms,fn){timers.push(setTimeout(fn,ms));}
   function run(){
-    var L=LEADS[idx%LEADS.length];idx++;go.disabled=true;reset();
+    var L=LEADS[idx%LEADS.length];idx++;reset();
     at(250,function(){bint.textContent=L.msg;bin.classList.add("show");});
     at(1000,function(){typing.classList.add("show");});
     at(2000,function(){typing.classList.remove("show");bout.classList.add("show");});
     L.f.forEach(function(f,i){at(2900+i*450,function(){var c=document.createElement("span");c.className="chip";c.innerHTML="<b>"+f[0]+"</b>"+f[1];chips.appendChild(c);requestAnimationFrame(function(){c.classList.add("show");});});});
     at(4900,function(){fill.style.background=L.c;fill.style.width=L.s+"%";score.textContent=L.l+" "+L.s;});
-    at(6100,function(){oc.innerHTML=L.o;oc.classList.add("show");handled++;tally.textContent=handled+(handled==1?" lead handled":" leads handled");go.textContent="Send another lead";go.disabled=false;});
+    at(6100,function(){oc.innerHTML=L.o;oc.classList.add("show");handled++;tally.textContent=handled+(handled==1?" lead handled":" leads handled");go.textContent="Send another lead";at(4200,run);});
   }
-  go.addEventListener("click",run);
+  go.addEventListener("click",function(){timers.forEach(clearTimeout);timers=[];run();});at(900,run);
 })();
 </script>
 </body>
